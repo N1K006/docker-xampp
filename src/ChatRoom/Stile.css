@@ -1,0 +1,55 @@
+/* Stile per le stanze */
+.room {
+    margin-bottom: 10px;  /* Riduce lo spazio tra le stanze */
+    padding: 10px;
+    padding-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.bottoni
+{
+    margin-bottom: 10px;  /* Riduce lo spazio tra le stanze */
+    padding: 10px;
+    padding-right: 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 325px;
+}
+
+.room-name {
+    font-size: 1.5em;
+    color: #2c3e50;
+    text-decoration: none;  /* Rimuove la sottolineatura del link */
+    font-weight: bold;
+}
+
+.room-name:hover {
+    color: #3498db;  /* Cambia colore quando il nome della stanza è cliccato */
+}
+
+.room-description {
+    font-size: 1em;
+    color: #666;
+    margin-top: 1px;  /* Riduce lo spazio sopra la descrizione */
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 3em;
+    margin-bottom: 1px;
+    margin-top: 15px;
+}
+
+p 
+{
+    margin-block: 2px;
+    color: #666;
+    font-size: 1em;
+}
+
+form {
+    display: inline-block; /* form affiancati*/
+    margin-right: 10px; /* spazio tra i form*/
+}

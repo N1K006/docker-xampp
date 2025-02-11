@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<form method="post" action="login.php">
+    <h2>Registrati</h2>
+    Username: <input type="text" name="username" required><br><br>
+    Email: <input type="email" name="email" required><br><br>
+    Password: <input type="password" name="password" required><br><br>
+
+    <label>Genere:</label><br>
+    <input type="radio" id="maschile" name="genere" value="Maschio">
+    <label for="maschile">Maschio</label><br>
+    <input type="radio" id="femminile" name="genere" value="Femmina">
+    <label for="femminile">Femmina</label><br><br>
+    
+    <label for="dataNascita">Data di nascita:</label><br>
+    <input type="date" id="dataNascita" name="dataNascita"><br><br>
+    
+    <button type="submit" name="action" value="register">Registrati</button>
+</form>
+<p>Hai già un account? <a href="Accedi.html">Accedi</a></p>
