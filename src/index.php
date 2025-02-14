@@ -1,3 +1,3 @@
 <?php
-    header("Location: ChatRoom/Accedi.html");
+    header("Location: LinkShortener/accedi.html");
 ?>

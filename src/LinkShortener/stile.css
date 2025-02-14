@@ -1,0 +1,24 @@
+header h1
+{
+    margin: auto;
+}
+
+
+header {
+    background-color: blue; 
+    color: white;
+    text-align: center;   
+}
+
+/* Stili per mettere le stringhe sulla stessa riga */
+.container {
+    display: flex;
+    justify-content: flex-start; /* Allineamento a sinistra */
+    gap: 20px; /* Distanza tra le stringhe */
+    border: 1px solid red; /* Aggiunta di un bordo per vedere se il contenitore è visibile */
+}
+
+.item {
+    border: 1px solid blue; /* Aggiunta di un bordo per le singole voci */
+    padding: 5px;
+}
