@@ -17,12 +17,11 @@ require_once "db.php";
             <h1>Dashboard di link</h1>
         </header>
 
-        <table border="10">
+        <table border="1">
             <thead>
                 <tr>
                     <th>Link Originale</th>
                     <th>Link Short</th>
-                    <th>Visite</th>
                 </tr>
             </thead>
             <tbody id="link_table_body">
@@ -44,6 +43,8 @@ require_once "db.php";
     form.addEventListener('submit', function(event)
     {
         event.preventDefault(); // non ti renderizza
+
+       
 
         fetch("link_shortener.php", 
         {
@@ -83,18 +84,8 @@ require_once "db.php";
                     row.appendChild(original_link_Div); //aggiungo al container (original_links) il div creato con dentro il link
 
                     const shorted_link_Div = document.createElement("td");
-                    /*shorted_link_Div.textContent = "https://3000-idx-docker-xampp-1736234920290.cluster-y34ecccqenfhcuavp7vbnxv7zk.cloudworkstations.dev/LinkShortener/redirect.php?link_id=" + link.id_link;
-                    row.appendChild(shorted_link_Div);*/
-
-                    const a = document.createElement("a");
-                    a.href = "https://3000-idx-docker-xampp-1736234920290.cluster-y34ecccqenfhcuavp7vbnxv7zk.cloudworkstations.dev/LinkShortener/redirect.php?link_id=" + link.id_link;
-                    shorted_link_Div.appendChild(a);
+                    shorted_link_Div.textContent = "https://3000-idx-docker-xampp-1736234920290.cluster-y34ecccqenfhcuavp7vbnxv7zk.cloudworkstations.dev/LinkShortener/redirect.php?link_id=" + link.id_link;
                     row.appendChild(shorted_link_Div);
-
-
-                    const visits_Div = document.createElement("td");
-                    visits_Div.textContent = link.n_visite;
-                    row.appendChild(visits_Div);
 
                     tableBody.appendChild(row); // Aggiunge la riga alla tabella
                 });

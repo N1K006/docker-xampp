@@ -16,19 +16,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $query = "SELECT * FROM users WHERE email='$email' AND pwd='$pwd'";
         $result = $connection->query($query);
 
-        if ($result)
+        if ($result && $result->num_rows > 0)
         {
-            if ($result->num_rows > 0)
+            if ($row = $result->fetch_assoc())
             {
-                if ($row = $result->fetch_assoc())
-                {
-                    $_SESSION["id_utente"] = $row['id_utente'];
-                    $_SESSION["username"] = $row['username'];
-                    $_SESSION["email"] = $row['email'];
-                    
-                    header("Location: dashboard.php");
-                    exit;
-                }
+                $_SESSION["id_utente"] = $row['id_utente'];
+                $_SESSION["username"] = $row['username'];
+                $_SESSION["email"] = $row['email'];
+                
+                header("Location: dashboard.php");
+                exit;
             }
         }
         else
@@ -42,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $genere = $_POST['genere'];
         $dataNascita = $_POST['dataNascita'];
 
-        $query = "SELECT * FROM users WHERE email='$email'";    
+        $query = "SELECT * FROM users WHERE email='$email'";
         $result = $connection->query($query);
 
         if ($result && $result->num_rows > 0)
@@ -52,9 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         else
         {
             $query = "INSERT INTO users (username, email, pwd, genere, data_nascita) VALUES ('$username', '$email', '$pwd', '$genere', '$dataNascita')";
-            $stmt = $connection->query($query);
-            $stmt->bind_param("sssss", $username, $email, $pwd, $genere, $dataNascita);
-            $result = $stmt->execute();
+            $result = $connection->query($query);
 
             if ($result)
             {
