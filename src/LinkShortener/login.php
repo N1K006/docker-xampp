@@ -52,9 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         else
         {
             $query = "INSERT INTO users (username, email, pwd, genere, data_nascita) VALUES ('$username', '$email', '$pwd', '$genere', '$dataNascita')";
-            $stmt = $connection->query($query);
-            $stmt->bind_param("sssss", $username, $email, $pwd, $genere, $dataNascita);
-            $result = $stmt->execute();
+            $result = $connection->query($query);
 
             if ($result)
             {

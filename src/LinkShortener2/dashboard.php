@@ -17,7 +17,7 @@ require_once "db.php";
             <h1>Dashboard di link</h1>
         </header>
 
-        <table border="1">
+        <table border="10">
             <thead>
                 <tr>
                     <th>Link Originale</th>

@@ -47,3 +47,7 @@
     margin-bottom: 40px; /* Mantiene lo spazio sotto */
     display: block; /* Assicura che non sia inline */
 }
+
+.text-visite{
+    text-align: center;
+}
