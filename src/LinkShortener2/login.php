@@ -16,22 +16,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $query = "SELECT * FROM users WHERE email='$email' AND pwd='$pwd'";
         $result = $connection->query($query);
 
-        if ($result && $result->num_rows > 0)
+        if ($result)
         {
-            if ($row = $result->fetch_assoc())
+            if ($result->num_rows > 0)
             {
-                $_SESSION["id_utente"] = $row['id_utente'];
-                $_SESSION["username"] = $row['username'];
-                $_SESSION["email"] = $row['email'];
-                
-                header("Location: dashboard.php");
-                exit;
+                if ($row = $result->fetch_assoc())
+                {
+                    $_SESSION["id_utente"] = $row['id_utente'];
+                    $_SESSION["username"] = $row['username'];
+                    $_SESSION["email"] = $row['email'];
+                    
+                    header("Location: dashboard.php");
+                    exit;
+                }
             }
         }
-        else
-        {
-            echo "Credenziali errate";
-        }
+            echo "Credenziali errate...";
     }
     else if ($_POST['action'] == 'register')
     {
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         $genere = $_POST['genere'];
         $dataNascita = $_POST['dataNascita'];
 
-        $query = "SELECT * FROM users WHERE email='$email'";
+        $query = "SELECT * FROM users WHERE email='$email'";    
         $result = $connection->query($query);
 
         if ($result && $result->num_rows > 0)

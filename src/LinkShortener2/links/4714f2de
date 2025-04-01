@@ -1,0 +1,17 @@
+<?php
+session_start();
+ob_start();  // Inizia il buffer di output
+require_once "../db.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "GET")
+{
+    $query = "UPDATE links SET n_visite = n_visite + 1 WHERE original_link = 'https://www.youtube.com/watch?v=Os47nMrjw_Y&ab_channel=Jacob%27sPiano'";
+    $result = $connection->query($query);
+
+    if (!$result)
+        die("Errore nell'aggiornare il numero di visite");
+
+    header("Location: https://www.youtube.com/watch?v=Os47nMrjw_Y&ab_channel=Jacob%27sPiano");
+    exit;
+}
+?>

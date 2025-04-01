@@ -31,10 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 }
             }
         }
-        else
-        {
-            echo "Credenziali errate";
-        }
+            echo "Credenziali errate...";
     }
     else if ($_POST['action'] == 'register')
     {

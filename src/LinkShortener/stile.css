@@ -51,3 +51,13 @@
 .text-visite{
     text-align: center;
 }
+
+th 
+{
+    padding: 5px 20px; /* 5px sopra e sotto, 10px a sinistra e a destra */
+}
+
+td
+{
+    padding: 5px 20px;
+}

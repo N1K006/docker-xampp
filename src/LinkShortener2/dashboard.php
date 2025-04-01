@@ -13,18 +13,21 @@ require_once "db.php";
     </head>
 
     <body>
-        <header class="custom-header"style = "background-color: blue;">
+        <header class="custom-header" style="background-color: blue;">
             <h1>Dashboard di link</h1>
         </header>
 
         <table border="10">
+            <!-- intestazione -->
             <thead>
                 <tr>
-                    <th>Link Originale</th>
-                    <th>Link Short</th>
-                </tr>
-            </thead>
-            <tbody id="link_table_body">
+                    <th>Link originale</th>
+                    <th>Link abbreviato</th>
+                    <th>Numero visite</th> <!-- contenuto dell'intestazione -->
+                </tr> <!-- riga dell'intestazione -->
+            </thead> <!-- raggruppa tutte le intestazioni della tabella -->
+            
+            <tbody id="link_table_body"> <!-- separa il contenuto dal thead (td -> contenuto della cella) --> 
             </tbody>
         </table>
 </html>
@@ -37,33 +40,39 @@ require_once "db.php";
     </form>
 </div>
 
-<script>
+
+<script> // Questo script server per inviare il form senza ricaricare la pagina
+
+    // Ottieni il form
     const form = document.getElementById('link_form');
 
+    // appena l'utente clicca "invia" questa funzione viene eseguita
     form.addEventListener('submit', function(event)
     {
-        event.preventDefault(); // non ti renderizza
+        event.preventDefault(); // Evita la ricarica della pagina
 
-       
-
+        // Invia il form a link_shortener.php in modo invisibile
         fetch("link_shortener.php", 
         {
             method: 'POST',
-            body: new FormData(form)
-        });
+            body: new FormData(form) 
+        })
 
-        document.getElementById('link').value="";
+        document.getElementById('link').value=""; 
     });
     
 </script>
 
 <script>
 
-    let previousData = null; // Variabile per salvare i dati precedenti
+    let previousData = null; // Variabile per salvare i dati precedenti della tabella
 
-    function aggiornaLink() {
-        fetch("get_links.php")
-            .then(response => response.json())
+    // funzione che aggiorna la tabella con i nuovi dati
+    function aggiornaLink() { 
+        fetch("get_links.php") // richiede i dati al file PHP get_links.php
+            .then(response => response.json()) 
+
+            // appena riceve i dati esegue tutto il codice
             .then(data => {
                 // Se i dati sono uguali a quelli precedenti, non fare nulla
                 if (JSON.stringify(data) === JSON.stringify(previousData)) // stringify -> converte in string a data (dati del form)
@@ -73,19 +82,33 @@ require_once "db.php";
                 previousData = data;
 
                 const tableBody = document.getElementById("link_table_body");
-                tableBody.innerHTML = ""; // Svuota la tabella prima di aggiornarla
+                tableBody.innerHTML = ""; // Svuota la tabella prima di aggiornarla per evitare duplicazioni
                 
+                // scorre tutti i link ricevuti e li aggiunge uno alla volta
                 data.forEach(link => {
-                    const row = document.createElement("tr"); // Crea una riga
+                    
+                    const row = document.createElement("tr"); // Crea una riga 
 
-                    // cose da fare con il link
+                    // Aggiunge il link originale alla cella
                     const original_link_Div = document.createElement("td");
                     original_link_Div.textContent = link.original_link;
                     row.appendChild(original_link_Div); //aggiungo al container (original_links) il div creato con dentro il link
 
                     const shorted_link_Div = document.createElement("td");
-                    shorted_link_Div.textContent = "https://3000-idx-docker-xampp-1736234920290.cluster-y34ecccqenfhcuavp7vbnxv7zk.cloudworkstations.dev/LinkShortener/redirect.php?link_id=" + link.id_link;
+
+                    // Aggiunge il link alla cella
+                    const a = document.createElement("a");
+                    a.href = link.shorted_link;
+                    a.textContent = a.href;
+                    shorted_link_Div.appendChild(a);
                     row.appendChild(shorted_link_Div);
+
+                    // Aggiunge il numero di visite alla cella
+                    const visits_Div = document.createElement("td");
+                    // Applica la classe 'text-visite' alla cella
+                    visits_Div.classList.add("text-visite");
+                    visits_Div.textContent = link.n_visite;
+                    row.appendChild(visits_Div);
 
                     tableBody.appendChild(row); // Aggiunge la riga alla tabella
                 });

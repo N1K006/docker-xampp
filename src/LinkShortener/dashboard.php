@@ -21,9 +21,9 @@ require_once "db.php";
             <!-- intestazione -->
             <thead>
                 <tr>
-                    <th>Link Originale</th>
-                    <th>Link Short</th>
-                    <th>Visite</th> <!-- contenuto dell'intestazione -->
+                    <th>Link originale</th>
+                    <th>Link abbreviato</th>
+                    <th>Numero visite</th> <!-- contenuto dell'intestazione -->
                 </tr> <!-- riga dell'intestazione -->
             </thead> <!-- raggruppa tutte le intestazioni della tabella -->
             

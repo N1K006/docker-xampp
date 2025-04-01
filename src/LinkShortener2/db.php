@@ -1,6 +1,6 @@
 <?php
 $host = 'db';
-$dbname = 'DB_LinkShortener';
+$dbname = 'DB_LinkShortener_2';
 $user = 'user';
 $password = 'user';
 $port = 3306;
