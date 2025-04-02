@@ -11,7 +11,7 @@ async function fetchData()
     }
     catch (error)
     {
-        console.error("Errore recupero dati:", error);
+        console.error("Errore nel recupero dei dati:", error);
         return [];
     }
 }
