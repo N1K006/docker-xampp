@@ -1,5 +1,6 @@
 <?php
-// api: application programming interface --> è un modo con cui un programmatore accede alle operazioni
+/* API: Application Programming Interface (Interfaccia di Programmazione delle Applicazioni) è un insieme di 
+operazioni o funzioni che un programmatore può utilizzare per interagire con un'applicazione o un servizio esterno*/
 
     header('Content-Type: application/json');
 
