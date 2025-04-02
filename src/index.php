@@ -1,3 +1,3 @@
 <?php
-    phpinfo();
+    header("Location: LinkShortener2/accedi.html");
 ?>

@@ -1,0 +1,63 @@
+.custom-header {
+    background: linear-gradient(90deg, #0066ff, #0033cc); /* Effetto sfumato */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px; /* Distanza dalla tabella */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 900px;
+    border-bottom: 1px solid #ccc; /* Linea di separazione tra le righe */
+    padding: 10px 0;
+}
+
+.column {
+    flex: 1; /* Fa sì che i due elementi occupino lo stesso spazio */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 10px;
+}
+
+.column div {
+    margin-bottom: 15px;
+    white-space: normal; /* Consente il ritorno a capo */
+    overflow: hidden; /* Opzionale, ma rimuove eventuali overflow visivi */
+}
+
+.column {
+    display: flex;
+    flex-direction: column; /* Allinea i contenuti nella stessa riga */
+    justify-content: space-between; /* Distanza tra i due link */
+}
+
+.space-form 
+{
+    margin-top: 40px;  /* Aggiunge spazio sopra il form */
+    margin-bottom: 40px; /* Mantiene lo spazio sotto */
+    display: block; /* Assicura che non sia inline */
+}
+
+.text-visite{
+    text-align: center;
+}
+
+th 
+{
+    padding: 5px 20px; /* 5px sopra e sotto, 10px a sinistra e a destra */
+}
+
+td
+{
+    padding: 5px 20px;
+}
