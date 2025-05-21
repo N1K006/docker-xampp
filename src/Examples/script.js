@@ -1,11 +1,10 @@
-async function fetchData()
+async function fetchData(url)
 {
     // percorso relativo
-    const url = "../api/data.php";
     try 
     {
         const response = await fetch(url); // oggetto risposta
-        const data = await response.json; // decodificare la risposta
+        const data = await response.json(); // decodificare la risposta
         console.log(data);
         return data;
     }
@@ -16,13 +15,28 @@ async function fetchData()
     }
 }
 
-async function populateTable()
+async function populateTable(url)
 {
-    const data = await fetchData(); // per richiamare una funzione asincrona si usa l'await
+    const data = await fetchData(url); // per richiamare una funzione asincrona si usa l'await
     const data_table = document.getElementById("data-table");
 
-    /*// pulisce il contenuto della tabella 
-    data_table.innerHtml = ''; // è tutto il codice dell'html che è scritto tutto dentro test_ws.html*/
+    data_table.innerHTML = ''; // è tutto il codice dell'html che è scritto tutto dentro test_ws.html
+
+    const thead = document.createElement('thead');
+    const tbody = document.createElement('tbody');
+    
+    const row = document.createElement('tr');
+    const data1 = document.createElement('th');
+    const data2 = document.createElement('th');
+    const data3 = document.createElement('th');
+    data1.textContent = "Nome";
+    data2.textContent = "Cognome";
+    data3.textContent = "Email";
+    row.appendChild(data1);
+    row.appendChild(data2);
+    row.appendChild(data3);
+    thead.appendChild(row);
+    data_table.appendChild(thead);
 
     // prende ogni elemento dell'array e lo aggiunge alla tabella
     data.forEach(element => {
@@ -36,9 +50,12 @@ async function populateTable()
         row.appendChild(data1);
         row.appendChild(data2);
         row.appendChild(data3);
-        data_table.appendChild(row);
+        tbody.appendChild(row);
     });
+    data_table.appendChild(tbody);
 }
 
 // associa il click del bottone alla funzione populateTable populateTable();
-document.getElementById("load-data-button").addEventListener('click', populateTable); 
+document.getElementById("load-data-button").addEventListener('click', () => populateTable("../api/data.php")); 
+
+document.getElementById("load-data-button-db").addEventListener('click', () => populateTable("../api/users.php"));

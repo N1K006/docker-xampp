@@ -1,0 +1,130 @@
+/* Stile base */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f4f4f4;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #004080;
+    padding: 20px 40px;
+    height: 100px;
+    box-shadow: 0 2px 10px white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    align-self: flex-start;
+    color: white;
+}
+
+.menu {
+    align-self: flex-end;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: yellow;
+    transition: width 0.4s ease-in-out;
+    border-radius: 2px;
+}
+
+.menu ul li a:hover {
+    color: white;
+    text-shadow: 0 0 8px yellow;
+}
+
+.menu ul li a:hover::after {
+    width: 100%;
+}
+
+/* SEZIONI */
+main {
+    padding: 40px 60px;
+}
+
+section {
+    margin-bottom: 100px;
+    padding: 60px 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+section h1 {
+    font-size: 32px;
+    color: #004080;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 18px;
+    color: #333;
+}
+
+#home {
+    scroll-margin-top: 120px;
+}
+
+
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+}
+
+.logo a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: yellow;
+    transition: width 0.4s ease-in-out;
+    border-radius: 2px;
+}
+
+.logo a:hover {
+    color: white;
+    text-shadow: 0 0 8px yellow;
+}
+
+.logo a:hover::after {
+    width: 100%;
+}

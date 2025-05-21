@@ -1,3 +1,3 @@
 <?php
-    header("Location: LinkShortener2/accedi.html");
+    header("Location: SitoWeb_Personale/home.php");
 ?>

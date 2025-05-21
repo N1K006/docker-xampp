@@ -12,4 +12,3 @@ operazioni o funzioni che un programmatore può utilizzare per interagire con un
 
     echo json_encode($data);
 ?>
-

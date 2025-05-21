@@ -1,0 +1,17 @@
+/* style.css */
+table {
+    width: 15%;
+    /*border-collapse: collapse;*/
+}
+
+th, td, td {
+    padding: 5px; /* Aggiunge spazio tra il bordo e il testo */
+    text-align: center;
+    border: 2px solid black;
+}
+
+/* Distanza tra i bottoni */
+#load-data-button, #load-data-button-db {
+    margin-right: 10px; /* Spazio tra i bottoni */
+    margin-bottom: 20px; /* Distanza tra i bottoni e la tabella */
+}
