@@ -16,12 +16,6 @@ ob_start();  // Inizia il buffer di output
 
 <?php
 
-// Verifica se è presente l'ID stanza nel parametro GET
-if (isset($_GET['id_stanza'])) 
-{
-    $_SESSION["id_stanza"] = $_GET['id_stanza'];
-}
-
 // Visualizza elenco stanze se non si sta creando una nuova stanza
 if (!isset($_POST['action']) || $_POST['action'] != 'new_room') 
 {
@@ -81,7 +75,7 @@ else
 
 <!-- Contenitore per i bottoni -->
 <div class="bottoni">
-    <form action="new_room.php" method="GET">
+    <form action="new_room.html" method="GET">
         <button type="submit" name="action" value="create_room">Crea Nuova Stanza</button>
     </form>
 

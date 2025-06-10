@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     $id_utente = $_SESSION["id_utente"];
 
     $hash = substr(hash("crc32", $original_link), 0, 8);
-    $shorted_link = "https://3000-idx-docker-xampp-1736234920290.cluster-y34ecccqenfhcuavp7vbnxv7zk.cloudworkstations.dev/LinkShortener2/links/$hash";
+    $shorted_link = "https://3000-idx-docker-xampp-1743576703788.cluster-rcyheetymngt4qx5fpswua3ry4.cloudworkstations.dev/LinkShortener2/links/$hash";
 
     $query = "INSERT INTO links (original_link, shorted_link, id_utente) VALUES ('$original_link', '$shorted_link', '$id_utente')";
     $result = $connection->query($query);

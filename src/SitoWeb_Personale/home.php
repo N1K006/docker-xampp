@@ -6,63 +6,58 @@
     <title>Sito personale - Nicola Damico</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_img.css">
 </head>
 
 <body>
     <header class="navbar">
-    <div class="logo"><a href="#home" class="nav-link">Il mio portfolio</a></div>
+        <a href="home.php" class="logo-link">
+            <div class="logo">Nicola Damico</div>
+        </a>
         <nav class="menu">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#pcto">PCTO</a></li>
-                <li><a href="#hobbies">Hobbies</a></li>
-                <li><a href="#lavoro">Lavoro</a></li>
-                <li><a href="#progetti">Progetti</a></li>
-                <li><a href="#gita">Gita</a></li>
-                <li><a href="#contatti">Contatti</a></li>
+                <li><a href="pcto.html">PCTO</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="lavoro.html">Lavoro</a></li>
+                <li><a href="progetti.html">Progetti</a></li>
+                <li><a href="gita.html">Gita</a></li>
+                <li class="dropdown">
+                    <button class="dropbtn">Materie</button>
+                    <div class="dropdown-content">
+                        <a href="materie/informatica.html">Informatica💻</a>
+                        <a href="materie/sistemi&reti.html">Sistemi e Reti🛜</a>
+                        <a href="materie/tpsit.html">TPSIT🍪</a>
+                        <a href="materie/italiano.html">Italiano📖👨‍🏫</a>
+                        <a href="materie/matematica.html">Matematica➗📘</a>
+                        <a href="materie/inglese.html">Inglese🌍✈️</a>
+                        <a href="materie/storia">Storia🪖💥</a>
+                        <a href="materie/educazione_fisica.html">Educazione Fisica🏋️</a>
+                        <a href="materie/religione.html">Religione✝️</a>
+                    </div>
+                </li>
+                <li><a href="contatti.html">Contatti</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- SEZIONI -->
     <main>
-        <section id="home">
-            <h1>Home</h1>
-            <p>Ciao! Mi chiamo Damico Nicola, ho 18 anni e vengo da Apiro, Italia.
-               Sono uno studente di Informatica presso l'IIS Marconi Pieralisi. Mi interessa particolarmente l'informatica e le tecnologie digitali.
-               La mia ambizione è diventare un professionista nel campo dello sviluppo software, con particolare attenzione al design e all'esperienza utente.
-               Questo blog rappresenta il mio progetto per il corso di Informatica, dove condivido le mie passioni, esperienze e competenze acquisite durante il mio percorso formativo.</p>
-        </section>
+        <section id="about-me-section" class="page-content">
+            <h1 class="main-title">About me</h1>
 
-        <section id="pcto">
-            <h1>PCTO</h1>
-            <p>Esperienze svolte durante l’alternanza scuola-lavoro, come lo stage presso Loccioni.</p>
-        </section>
-
-        <section id="hobbies">
-            <h1>Hobbies</h1>
-            <p>Mi piace la tecnologia, programmare, andare in bici e molto altro.</p>
-        </section>
-
-        <section id="lavoro">
-            <h1>Lavoro</h1>
-            <p>Collaboro con mio padre nell’attività di apicoltura, soprattutto durante l’estate.</p>
-        </section>
-
-        <section id="progetti">
-            <h1>Progetti</h1>
-            <p>Ho sviluppato diversi progetti scolastici e personali, come siti web e software in Python.</p>
-        </section>
-
-        <section id="gita">
-            <h1>Gita</h1>
-            <p>Esperienze durante le gite scolastiche, momenti di crescita e divertimento.</p>
-        </section>
-
-        <section id="contatti">
-            <h1>Contatti</h1>
-            <p>Email: <a href="mailto:nicola.damico@example.com">nicola.damico@example.com</a></p>
+            <div class="content-block">
+                <h2 class="section-title">Chi Sono</h2>
+                <p>Ciao! Mi chiamo Damico Nicola, ho 18 anni e vengo da Apiro, Italia. Sono uno studente di Informatica presso l'IIS Marconi Pieralisi di Jesi.</p>
+                <p>Fin da piccolo ho sempre avuto una forte curiosità per il mondo della tecnologia e dell'informatica. Questa passione mi ha spinto a scegliere un percorso di studi che mi permettesse di approfondire le mie conoscenze e sviluppare nuove competenze in questo campo in continua evoluzione.</p>
+                <p>Durante il mio percorso scolastico, ho avuto modo di studiare diversi linguaggi di programmazione, come C++, Java e Python, e di approcciarmi allo sviluppo web con HTML, CSS e JavaScript. Ho partecipato a progetti che mi hanno permesso di mettere in pratica queste conoscenze, lavorando sia individualmente che in team.</p>
+                <p>La mia ambizione è quella di diventare un professionista nel campo dello sviluppo software, con un interesse particolare per il back-end, la gestione dei database e l'intelligenza artificiale. Sono costantemente alla ricerca di nuove opportunità per imparare e crescere, e sono sempre pronto ad affrontare nuove sfide.</p>
+                <p>Questo sito personale è il mio progetto per il corso di Informatica, dove intendo condividere le mie esperienze, i miei progetti, le mie passioni e le competenze acquisite. Spero ti piaccia esplorarlo e scoprire di più su di me!</p>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2023 Nicola Damico - Tutti i diritti riservati</p>
+    </footer>
+
 </body>
 </html>

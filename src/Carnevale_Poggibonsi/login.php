@@ -9,9 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST')
     {
         $cod_f = $_POST['codice_fiscale'];
         $pwd = $_POST['password'];
+        $pwd = md5($pwd);
     
-        $query = "SELECT * FROM utenti WHERE c_f='$cod_f' AND pwd='$pwd'";
-        $result = $connection->query($query);
+        $result = $connection->query("SELECT * FROM utenti WHERE c_f='$cod_f' AND pwd='$pwd'");
 
         if ($result)
         {
@@ -34,12 +34,16 @@ if ($_SERVER["REQUEST_METHOD"] == 'POST')
         }
     }
 }
-else if ($_SERVER["REQUEST_METHOD"] == 'GET')
-{
-    echo "<form method=\"post\" action=\"login.php\">
-    Codice fiscale: <input type=\"text\" name=\"codice_fiscale\" required><br><br>
-    Password: <input type=\"password\" name=\"password\" required><br><br>
-    <button type=\"submit\" name='action' value=\"login\">Accedi</button>
-    </form>";
-}
 ?>
+
+<html>
+<form method="post" action="login.php">
+    Codice fiscale: <input type="text" name="codice_fiscale" required><br><br>
+    Password: <input type="password" name="password" required><br><br>
+    <button type="submit" name='action' value="login">Accedi</button>
+</form>
+
+<form method="get" action="registration.php">
+    <button type="submit">Registrati</button>
+</form>
+</html>

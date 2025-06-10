@@ -98,7 +98,7 @@ require_once "db.php";
 
                     // Aggiunge il link alla cella
                     const a = document.createElement("a");
-                    a.href = "https://3000-idx-docker-xampp-1736234920290.cluster-y34ecccqenfhcuavp7vbnxv7zk.cloudworkstations.dev/LinkShortener/redirect.php?link_id=" + link.id_link;
+                    a.href = "https://3000-idx-docker-xampp-1743576703788.cluster-rcyheetymngt4qx5fpswua3ry4.cloudworkstations.dev/LinkShortener/redirect.php?link_id=" + link.id_link;
                     a.textContent = a.href;
                     shorted_link_Div.appendChild(a);
                     row.appendChild(shorted_link_Div);

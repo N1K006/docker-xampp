@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
                 $_SESSION["data_nascita"] = $row['data_nascita'];
                 
                 header("Location: rooms.php");
-                exit;  // Ricorda di aggiungere 'exit;' dopo header per fermare l'esecuzione del codice
+                exit;  
             } 
             else 
             {

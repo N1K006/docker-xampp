@@ -52,6 +52,7 @@ require_once "db.php";
         event.preventDefault(); // Evita la ricarica della pagina
 
         // Invia il form a link_shortener.php in modo invisibile
+        // invia richiesta http: POST con i dati del form
         fetch("link_shortener.php", 
         {
             method: 'POST',
@@ -94,9 +95,9 @@ require_once "db.php";
                     original_link_Div.textContent = link.original_link;
                     row.appendChild(original_link_Div); //aggiungo al container (original_links) il div creato con dentro il link
 
-                    const shorted_link_Div = document.createElement("td");
 
-                    // Aggiunge il link alla cella
+                    // Aggiunge il shorted link alla cella
+                    const shorted_link_Div = document.createElement("td");
                     const a = document.createElement("a");
                     a.href = link.shorted_link;
                     a.textContent = a.href;

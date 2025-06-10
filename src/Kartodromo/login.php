@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && $_POST['action'] === "login" && iss
 {
     $cod_f = $_POST['codice_fiscale'];
     $pwd = $_POST['password'];
+    $pwd = md5($pwd);
 
     $result = $connection->query("SELECT * FROM utente WHERE cod_f='$cod_f' AND pwd='$pwd'");
 
@@ -23,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && $_POST['action'] === "login" && iss
                 header("Location: dashboard_gare.php");
                 exit;
             }
-            else // 1 -->  gestore
+            else if ($_SESSION["ruolo"] == 1) // 1 -->  gestore
             {
                 header("Location: gestione_gare.php");
                 exit;

@@ -3,7 +3,7 @@ ob_start();
 session_start();
 require_once("db/db.php");
 
-if ($_SESSION["ruolo"] == 0)
+if ($_SESSION["ruolo"] == 0 || !isset($_SESSION["cod_f"]))
 {
     header("Location: login.php");
     exit;
@@ -37,8 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && $_POST['action'] === "Invia" && iss
     }
 }
 ?>
-
-
 <html>
     <form method="post" action="gestione_gare.php" enctype="multipart/form-data">
         File: <input type="file" name="file"><br>

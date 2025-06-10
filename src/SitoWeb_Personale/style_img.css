@@ -1,0 +1,242 @@
+/* style_img.css - Stili specifici per Immagini e Video */
+
+/* --------------------------------------------------- */
+/* SEZIONI CON IMMAGINE O VIDEO AFFIANCATI AL TESTO (TESTO + MEDIA ESTERNO) */
+/* --------------------------------------------------- */
+.content-block.content-with-media {
+    display: flex;
+    align-items: flex-start; /* Allinea il testo e il media in alto */
+    gap: 40px; /* Spazio tra testo e media */
+    margin-bottom: 40px;
+    padding-top: 20px;
+    flex-wrap: wrap; /* Permette al layout di andare a capo su schermi piccoli */
+}
+
+/* Stili per il blocco di testo principale */
+.content-block.content-with-media .text-content {
+    flex: 3; /* Il testo occupa 3/4 dello spazio disponibile */
+    min-width: 300px; /* Larghezza minima per il blocco di testo */
+}
+
+/* CONTENITORE PER IMMAGINI AFFIANCATE SOTTO IL TESTO (es. Apicoltura e Tartufo) */
+.images-below-text-flex-container { 
+    display: flex; 
+    justify-content: center; /* Centra le immagini orizzontalmente */
+    align-items: flex-start; /* Allinea le immagini in alto */
+    gap: 30px; /* Spazio tra le immagini */
+    margin-top: 20px; 
+    width: 100%; 
+    flex-wrap: wrap; /* ESSENZIALE: Permette alle immagini di andare a capo se non c'è spazio sufficiente */
+}
+
+/* NUOVO CONTENITORE PER IMMAGINE SINGOLA SOTTO IL TESTO (es. Sport) */
+.single-image-below-text-container {
+    display: flex;
+    justify-content: center; /* Centra l'immagine orizzontalmente */
+    margin-top: 20px; /* Spazio tra il testo sopra e l'immagine */
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+}
+
+
+/* STILI PER IL MEDIA PRINCIPALE AFFIANCATO (VIDEO/IMMAGINI ESTERNE COME PCTO, HOBBIES VIAGGI, ECC.) */
+.content-block.content-with-media .media-content { 
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-start; 
+    min-width: 280px; 
+    max-width: 400px; 
+}
+
+.hobby-video {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    border-radius: 15px; 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 
+                0 0 0 5px rgba(255, 215, 0, 0.6); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    border: 3px solid rgba(255, 215, 0, 0.8); 
+}
+
+.hobby-video:hover {
+    transform: translateY(-8px) scale(1.02); 
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 
+                0 0 0 8px rgba(255, 215, 0, 0.9); 
+}
+
+/* Stile per l'immagine introduttiva (PCTO) */
+.introduction-image {
+    width: 100%; 
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per l'immagine di apicoltura (GRANDE) */
+.apicoltura-image-below {
+    width: 100%; 
+    max-width: 300px; 
+    min-width: 300px; 
+    height: auto;
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.2s ease;
+}
+
+.apicoltura-image-below:hover {
+    transform: scale(1.05); 
+}
+
+/* STILE PER L'IMMAGINE DEL TARTUFO (GRANDE) */
+.tartufo-image-below {
+    width: 100%; 
+    max-width: 300px; 
+    min-width: 300px; 
+    height: auto;
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+    transition: transform 0.2s ease;
+}
+
+.tartufo-image-below:hover {
+    transform: scale(1.05); 
+}
+
+
+/* STILE PER L'IMMAGINE DELLA SEZIONE VIAGGI (affiancata al testo) */
+.travel-image {
+    width: 100%; 
+    height: auto;
+    border-radius: 12px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.travel-image:hover {
+    transform: scale(1.03); 
+}
+
+/* STILE PER L'IMMAGINE DELLA SEZIONE MOTO (affiancata al testo) */
+.moto-image {
+    width: 100%; 
+    height: auto;
+    border-radius: 12px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease; 
+}
+
+.moto-image:hover {
+    transform: scale(1.03); 
+}
+
+/* STILE PER L'IMMAGINE DELLA SEZIONE SPORT (sotto il testo, ancora più grande) */
+.sport-image-below{   
+    width: 100%; 
+    max-width: 700px; 
+    min-width: 400px; 
+    height: auto;
+    border-radius: 12px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease; 
+}
+
+.sport-image-below:hover {
+    transform: scale(1.03); 
+}
+
+/* NUOVI STILI PER LE IMMAGINI DEL LAVORO (affiancate) */
+.work-images-flex-container { 
+    display: flex; 
+    justify-content: center; /* Centra le immagini orizzontalmente */
+    align-items: flex-start; /* Allinea le immagini in alto */
+    gap: 20px; /* Spazio tra le immagini del lavoro */
+    margin-top: 30px; /* Spazio sopra le immagini */
+    width: 100%; 
+    flex-wrap: wrap; /* Permette alle immagini di andare a capo */
+}
+
+.work-image {
+    width: 100%; /* Si adatta al contenitore flex */
+    max-width: 280px; /* Larghezza massima per ogni immagine del lavoro (puoi aumentarla) */
+    min-width: 200px; /* Larghezza minima per non farle rimpicciolire troppo su desktop */
+    height: auto;
+    border-radius: 8px; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.work-image:hover {
+    transform: translateY(-5px) scale(1.04); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
+}
+
+
+/* --------------------------------------------------- */
+/* RESPONSIVE DESIGN per Immagini e Video (schermi più piccoli) */
+/* --------------------------------------------------- */
+@media (max-width: 900px) {
+    /* Responsive per sezioni con immagine o video affiancati (testo + media) */
+    .content-block.content-with-media {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 25px; 
+    }
+
+    .content-block.content-with-media .text-content {
+        flex: none; 
+        width: 100%; 
+        min-width: unset; 
+    }
+
+    /* Modifiche per il contenitore delle immagini sotto il testo su mobile (Hobbies) */
+    .images-below-text-flex-container { 
+        flex-direction: column; 
+        justify-content: center;
+        gap: 15px; 
+        margin-top: 15px; 
+    }
+
+    /* Riduci le dimensioni massime e minime delle immagini sotto il testo su mobile (Hobbies) */
+    .apicoltura-image-below, .tartufo-image-below { 
+        max-width: 250px; 
+        min-width: 200px; 
+    }
+
+    /* Immagine Sport su mobile */
+    .single-image-below-text-container {
+        flex-direction: column; 
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .sport-image-below {
+        max-width: 90%; 
+        min-width: 250px; 
+    }
+
+    /* Modifiche per il contenitore delle immagini del lavoro su mobile */
+    .work-images-flex-container {
+        flex-direction: column; /* Impila le immagini su mobile */
+        gap: 15px;
+    }
+
+    .work-image {
+        max-width: 80%; /* Riduci la larghezza massima per mobile */
+        min-width: 180px; /* Assicurati che non diventi troppo piccola */
+    }
+
+
+    .content-block.content-with-media .media-content { 
+        flex: none; 
+        width: 80%; 
+        max-width: 100%; 
+        justify-content: center; 
+        align-items: center; 
+        padding-top: 0; 
+    }
+    /* Applica width: 100% a tutte le immagini e video all'interno del media-content (esterni) */
+    .hobby-video, .introduction-image, .travel-image, .moto-image { 
+        width: 100%; 
+    }
+}
