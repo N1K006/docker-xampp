@@ -34,6 +34,7 @@
                         <a href="materie/educazione_fisica.html">Educazione Fisica🏋️</a>
                         <a href="materie/religione.html">Religione✝️</a>
                     </div>
+                    
                 </li>
                 <li><a href="contatti.html">Contatti</a></li>
             </ul>
